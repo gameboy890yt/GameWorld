@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форум - GameWorld</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Подключаем шрифты Roboto и Oswald из Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&family=Rubik:wght@400;700&display=swap">
+	<script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var settingsButton = document.querySelector('.settings-button');
+            var dropdownContent = document.querySelector('.dropdown-content');
+
+            settingsButton.addEventListener('click', function () {
+                dropdownContent.classList.toggle('show');
+            });
+
+            document.addEventListener('click', function (event) {
+                if (!event.target.matches('.settings-button')) {
+                    dropdownContent.classList.remove('show');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Форум сервера</h1>
+		<div class="settings-container">
+			<button class="settings-button" onclick="toggleDropdown()">☰</button>
+			<div class="dropdown-content" id="dropdown-content">
+				<a href="index.html">Главная</a>
+				<a href="about.html">О сервере</a>
+				<a href="rules.html">Правила</a>
+				<a href="forum.html">Форум</a>
+        </div>		
+    </header>
+
+    <main>
+        <section id="forum">
+            <h2>Темы на форуме</h2>
+            <ul>
+                <li><a href="#topic1">Тема 1</a></li>
+                <li><a href="#topic2">Тема 2</a></li>
+                <!-- Добавьте дополнительные темы -->
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Minecraft Сервер</p>
+    </footer>
+	
+	<script src="script.js"></script>
+</body>
+</html>
